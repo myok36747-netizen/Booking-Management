@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Chakra Petch", "Noto Sans Myanmar", ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: #eff2f9;
+  --color-line: #d9dde8;
+  --color-field: #f4f6fa;
+  --color-muted: #8a8fa3;
+
+  /* Brand colors (Resources/color.txt) */
+  --color-primary: #323653;
+  --color-secondary: #e59a1b;
+
+  /* Status colors.
+     NOTE: color.txt lists pending as #323653, but the listing mockup shows
+     PENDING in orange. The mockup is followed here; change this one line to
+     #323653 if you want the color.txt value instead. */
+  --color-status-pending: #e59a1b;
+  --color-status-accepted: #6f78b9;
+  --color-status-rejected: #d34545;
+  --color-status-enrolled: #2e7d5b;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-primary);
+}
+
+/* Native date/time inputs: stretch the browser's picker trigger over the whole
+   field so a click anywhere opens it, and let our own icon sit on top. */
+.picker-input {
+  position: relative;
+}
+.picker-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+}
+.picker-input:disabled::-webkit-calendar-picker-indicator {
+  cursor: default;
+}
